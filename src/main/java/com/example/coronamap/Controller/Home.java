@@ -20,7 +20,7 @@ public class Home {
     @Autowired
     HttpServletRequest request;
 
-    @GetMapping ("/s")
+    @GetMapping ("/")
     public String home(Model model){
         List<Header> allData = CoronaData.list;
         long totals = allData.stream().mapToLong(Header::getTotalcaseLatest).sum();
