@@ -1,1 +1,1 @@
-web: java -jar target/*.jar --server.port=$PORT
+web: java -jar build/libs/rate-0.0.1-SNAPSHOT.jar
