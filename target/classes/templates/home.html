@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Corona report</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+
+    <h1 class="display-4">Corona reported</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <a class="btn btn-primary btn-lg" href="/s" role="button">Home Page</a>
+    <hr class="my-4">
+    <p class="lead"> ToTal Case Today</p>
+    <h2 class="display-4" th:text="${totals}"></h2>
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <nav class="navbar navbar-light bg-light" >
+        <form class="form-inline" action="/find" method ="get">
+            <input class="form-control mr-sm-2" name="country" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</div>
+
+<table  class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Case Data</th>
+    </tr>
+    </thead>
+   <tbody>
+    <tr  th:each="data:${list}">
+        <td th:text="${data.getState()}"></td>
+        <td th:text="${data.getCountry()}"></td>
+        <td th:text="${data.getTotalcaseLatest()}"></td>
+    </tr>
+   </tbody>
+</table>
+</div>
+</body>
+</html>

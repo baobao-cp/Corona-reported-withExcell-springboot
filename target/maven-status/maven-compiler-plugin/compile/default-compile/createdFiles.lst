@@ -1,0 +1,4 @@
+com\example\coronamap\Controller\Home.class
+com\example\coronamap\CoronaMapApplication.class
+com\example\coronamap\service\CoronaData.class
+com\example\coronamap\Model\Header.class
